@@ -17,8 +17,7 @@ exports.generateToken = (user) => {
 exports.isAuth = (req, res, next) => {
   const bearerToken = req.headers['authorization'];
 
-  //console.log(req.headers);
-
+  
   if (!bearerToken) {
     res.status(401).send({ message: 'Token is not supplied' });
   } else {
@@ -27,7 +26,7 @@ exports.isAuth = (req, res, next) => {
       if (err) {
         res.status(401).send({ message: 'Invalid Token' });
       } else {
-        console.log(data);
+        //console.log(data);
         req.user = data;
         next();
       }

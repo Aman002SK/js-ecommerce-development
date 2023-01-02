@@ -1,14 +1,14 @@
 import { register } from '../api';
 import { getUserInfo, setUserInfo } from '../localStorage';
-import { hideLoading, showLoading, showMessage } from '../utils';
+import { hideLoading, showLoading, showMessage, redirectUser } from '../utils';
 // import { showLoading, hideLoading, showMessage, redirectUser } from "../utils";
 
 const RegisterScreen = {
   after_render: () => {
     document
       .getElementById('register-form')
-      .addEventListener('submit', async (e) => {
-        e.preventDefault();
+      .addEventListener('click', async (e) => {
+      e.preventDefault()
         showLoading();
         let data;
         try {
@@ -17,22 +17,26 @@ const RegisterScreen = {
             email: document.getElementById('email').value,
             password: document.getElementById('password').value,
           });
-          console.log(data);
+          //console.log(data);
+          hideLoading();
+          if (data.error) {
+            console.log("Hello")
+            showMessage(data.error);
+          } else {
+            setUserInfo(data);
+            alert('successfully registered');
+  
+            toastr.success('logged in successfully');
+            document.location.hash = '/home';
+            //redirectUser();
+          }
         } catch (error) {
+          console.log("error")
           showMessage(error.message);
         }
 
-        hideLoading();
-        if (data.error) {
-          showMessage(data.error);
-        } else {
-          setUserInfo(data);
-          alert('successfully registered');
-
-          toastr.success('logged in successfully');
-          document.location.hash = '/home';
-          //redirectUser();
-        }
+        
+       
       });
   },
 
@@ -43,7 +47,7 @@ const RegisterScreen = {
     }
     return `
 <div class="form-container">
-<form id="register-form">
+<form >
 <div class="form-items">
     <h1>Register</h1>
 
@@ -61,7 +65,7 @@ const RegisterScreen = {
     <input class="form-input" type="password" name="password" id="password" />
   </div>
 
-    <button class="form-submit primary" type="submit" >SignUp</button>
+    <button id="register-form" class="form-submit primary" type="submit" >SignUp</button>
   
   <div>
     <div>

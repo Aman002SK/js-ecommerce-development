@@ -12,10 +12,9 @@ orderRouter.use(isAuth);
 
 orderRouter.get(
   '/mine',
-
   expressAsyncHandler(async (req, res) => {
     // console.log('sui');
-    console.log(req.user._id);
+    //console.log(req.user._id);
     try {
       const user = await User.findOne({ email: req.user.email });
       const orders = await Order.find({ user: user._id });
@@ -26,6 +25,23 @@ orderRouter.get(
     }
   })
 );
+
+// productRouter.get(
+//   '/:page',
+//   expressAsyncHandler(async (req, res) => {
+//     // const response = await axios({
+//     //   url: 'https://fakestoreapi.com/products',
+//     //   headers: {
+//     //     'Content-Type': 'application/json',
+//     //   },
+//     // });
+//     // const products = response.data;
+//     // console.log(products);
+//     // Product.insertMany(products, (err, data) => {
+//     //   if (err) console.log(err);
+
+//     //   console.log(data);
+//     // });
 
 orderRouter.get(
   '/:id',

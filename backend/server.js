@@ -18,12 +18,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(json());
 
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .catch((err) => {
-    console.log(err.reason);
+    console.log(err.message);
   })
   .then(() => {
     console.log('connected to DB');

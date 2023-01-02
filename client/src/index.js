@@ -22,7 +22,6 @@ import PlaceOrderScreen from './screen/PlaceOrder.js';
 import OrderScreen from './screen/OrderScreen.js';
 
 const routes = {
-  '/': SigninScreen,
   '/home': HomeScreen,
   '/product/:id': ProductScreen,
   '/order/:id': OrderScreen,

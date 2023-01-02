@@ -11,7 +11,7 @@ export const getProduct = async (id) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        authorization: `Bearer ${token}`,
+         Authorization: `Bearer ${token}`,
       },
     });
     // if (response.statusText !== "OK") {
@@ -62,13 +62,15 @@ export const register = async ({ name, email, password }) => {
         password,
       },
     });
+    console.log(response)
 
     if (response.statusText != 'OK') {
       throw new Error(response.data.message);
     }
-    console.log(response.data);
+    //console.log(response.data);
     return response.data;
   } catch (err) {
+    console.log(err)
     return { error: err.response.data.message || err.message };
   }
 };
@@ -81,7 +83,7 @@ export const update = async ({ name, email, password }) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       data: {
         name,

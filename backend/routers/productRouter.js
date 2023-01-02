@@ -7,23 +7,42 @@ const { isAuth } = require('../utils');
 
 const productRouter = express.Router();
 
-productRouter.use(isAuth);
+//productRouter.use(isAuth);
+
+// productRouter.get("/inserting",expressAsyncHandler(async (req, res) => {
+//   const response = await axios({
+//     url: 'https://fakestoreapi.com/products',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//   });
+//   const products = response.data;
+//   //console.log(products);
+//   Product.insertMany(products, (err, data) => {
+//     if (err) console.log(err);
+
+//     //console.log(data);
+//     return res.send(data)
+//   });
+// }))
+
+
 
 productRouter.get(
   '/:page',
   expressAsyncHandler(async (req, res) => {
     // const response = await axios({
-    //   url: 'https://fakestoreapi.com/products',
+    //   url: 'https://fakestoreapi.com/products?limit=20',
     //   headers: {
     //     'Content-Type': 'application/json',
     //   },
     // });
     // const products = response.data;
-    // console.log(products);
+    // //console.log(products);
     // Product.insertMany(products, (err, data) => {
     //   if (err) console.log(err);
 
-    //   console.log(data);
+    //   //console.log(data);
     // });
 
     try {

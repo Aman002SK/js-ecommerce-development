@@ -8,7 +8,7 @@ const ProfileScreen = {
     document.getElementById('signout-form').addEventListener('click', () => {
       clearUser();
 
-      document.location.hash = '/';
+      document.location.hash = '/signin';
       toastr.success('sign out successfully');
     });
     document

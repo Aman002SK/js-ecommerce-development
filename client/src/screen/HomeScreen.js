@@ -51,7 +51,7 @@ const handlePage = (count) => {
           {
             headers: {
               'Content-Type': 'application/json',
-              authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -91,7 +91,7 @@ const HomeScreen = {
             {
               headers: {
                 'Content-Type': 'application/json',
-                authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`,
               },
             }
           );
@@ -133,7 +133,7 @@ const HomeScreen = {
               {
                 headers: {
                   'Content-Type': 'application/json',
-                  authorization: `Bearer ${token}`,
+                  Authorization: `Bearer ${token}`,
                 },
               }
             );
@@ -154,7 +154,7 @@ const HomeScreen = {
               {
                 headers: {
                   'Content-Type': 'application/json',
-                  authorization: `Bearer ${token}`,
+                  Authorization: `Bearer ${token}`,
                 },
               }
             );
@@ -175,7 +175,7 @@ const HomeScreen = {
               {
                 headers: {
                   'Content-Type': 'application/json',
-                  authorization: `Bearer ${token}`,
+                  Authorization: `Bearer ${token}`,
                 },
               }
             );
@@ -196,7 +196,7 @@ const HomeScreen = {
               {
                 headers: {
                   'Content-Type': 'application/json',
-                  authorization: `Bearer ${token}`,
+                  Authorization: `Bearer ${token}`,
                 },
               }
             );
@@ -259,7 +259,7 @@ const HomeScreen = {
             {
               headers: {
                 'Content-Type': 'application/json',
-                authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${token}`,
               },
             }
           );
@@ -329,7 +329,7 @@ const HomeScreen = {
         url: `http://localhost:5000/api/products/${currentPage}`,
         headers: {
           'Content-Type': 'application/json',
-          authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 

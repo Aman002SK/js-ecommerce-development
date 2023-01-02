@@ -5,6 +5,7 @@
 // const priceRange = document.querySelector('.priceRange');
 
 const displayProducts = (filteredProducts, Rating) => {
+  //console.log(filteredProducts);
   const filterProductsHTML = filteredProducts
     .map(
       (product) => `

@@ -8,6 +8,7 @@ const { isAuth } = require('../utils');
 
 const userRouter = express.Router();
 
+
 userRouter.post(
   '/signin',
   expressAsyncHandler(async (req, res) => {
@@ -55,6 +56,7 @@ userRouter.post(
 
     user.save((err, data) => {
       if (err) res.status(401).send({ message: 'Invalid Email or Password' });
+      //console.log(data);
 
       let token = generateToken(data);
 
